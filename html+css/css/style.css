@@ -1,0 +1,84 @@
+
+* {
+    background-color: #dbdbdb;
+}
+
+html {
+    font-family: Roboto, sans-serif;
+}
+
+h1 {
+    color: #0a6bab;
+    margin-bottom: 0.25em;
+}
+
+a {
+    color: #0a6bab;
+    background-color: #2a2b2b;
+}
+
+p {
+    text-align: justify;
+    text-indent: 3em;
+}
+
+.h2_grey {
+    color: #2a2b2b;
+    font-style: oblique;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.h2_blue_on_grey {
+    color: #0a6bab;
+    background-color: #2a2b2b;
+}
+
+.h2_blue {
+    color: #0a6bab;
+}
+
+.box1 {
+    background-color: #2a2b2b;
+}
+
+.contact__type {
+    color: #dbdbdb;
+    background-color: #2a2b2b;
+}
+.contact__value {
+    color: #dbdbdb;
+    background-color: #2a2b2b;
+}
+
+.ptable_title {
+    background: #2a2b2b;
+    color: #0a6bab;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+th {
+    background: #2a2b2b;
+    padding: 10px 20px;
+}
+td {
+    color: #2a2b2b;
+}
+
+.team {
+    background-color: #2a2b2b;
+    color: #dbdbdb;
+}
+.teamul {
+    background-color: #2a2b2b;
+}
+
+p.team {
+    background-color: #2a2b2b;
+    color: #dbdbdb;
+    text-align: justify;
+    text-indent: 0em;
+}
