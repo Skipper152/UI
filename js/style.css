@@ -1,0 +1,63 @@
+
+html {
+    font-family: Roboto, sans-serif;
+    background: #dbdbdb;
+    color: #2a2b2b;
+}
+
+h1 {
+    color: #0a6bab;
+    margin-bottom: 0.25em;
+    margin-block-end: 1.5em;
+}
+
+p {
+    text-align: justify;
+    text-indent: 3em;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.alert {
+    color: red;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.ptable_title {
+    background: #2a2b2b;
+    color: #0a6bab;
+}
+
+.input_text {
+    text-align: center;
+    color: #dbdbdb;
+    background-color: #0a6bab;
+}
+
+.input_button {
+    width: 10em;
+    height: 3em;
+    text-align: center;
+    color: #dbdbdb;
+    background-color: #0a6bab;
+    margin: 3em;
+}
+
+.wrapper1 {
+    text-align: center;
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-top: 3em;
+}
+
+.hoverRow { background-color: #909090; }
+.clickedRow { background-color: lightgreen; }
+
+/*
+.wrapper2 {
+
+}*/

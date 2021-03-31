@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Equation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="calculation.js"></script>
+</head>
+    <body>
+        <div class="wrapper1">
+            <h1>Solving the quadratic equation</h1>
+            <form name="result" action="javascript:calculate_equation()">
+                <div>
+                    <input type="text" class="input_text" size="1em" name="coef_a"> &middot; x&sup2; +
+                    <input type="text" class="input_text" size="1em" name="coef_b"> &middot; x +
+                    <input type="text" class="input_text" size="1em" name="coef_c"> = 0
+                </div>
+                <div class="alert" id="target"></div>
+                <div>
+                    <input type="submit" class="input_button" value="Calculate">
+                </div>
+                <table border="1" width="100%" cellpadding="5" id="result_table">
+                    <thead class="ptable_title">
+                        <tr>
+                            <th><b>Result</b></th>
+                            <th><b>x<sub>1</sub></b></th>
+                            <th><b>x<sub>2</sub></b></th>
+                            <th><b>Equation</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
