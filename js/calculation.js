@@ -102,7 +102,7 @@ function deleteRow(tabName, hoverClass, clickClass) {
         let elem = e.target;
 
         if (elem.parentNode.tagName === 'TR' && elem.parentNode.parentNode.tagName === 'TBODY') {
-            arr.splice(elem.id, 1);
+            arr.splice(elem.parentNode.id, 1);
             let tbody = document.getElementById(tabName).getElementsByTagName('TBODY')[0];
             tbody.remove()
             count = 0;
