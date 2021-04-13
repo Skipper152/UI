@@ -9,6 +9,7 @@ const tree2: Tree<string> = new Tree<string>();
 function checkWork(): void {
     const tr1: Tree<number> = new Tree<number>();
 
+
     tr1.insertBlock(3);
     tr1.insertBlock(7);
     tr1.insertBlock(1);
