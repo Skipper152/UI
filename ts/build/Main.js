@@ -1,24 +1,32 @@
 import { Tree } from "./Tree.js";
-// tslint:disable-next-line:typedef
-function checkWork() {
-    var _a;
-    var tree = new Tree();
-    tree.insertBlock(3);
-    tree.insertBlock(7);
-    tree.insertBlock(1);
-    tree.insertBlock(5);
-    tree.insertBlock(2);
+var tree1 = new Tree();
+var tree2 = new Tree();
+/*
+function checkWork(): void {
+    const tr1: Tree<number> = new Tree<number>();
+
+    tr1.insertBlock(3);
+    tr1.insertBlock(7);
+    tr1.insertBlock(1);
+    tr1.insertBlock(5);
+    tr1.insertBlock(2);
+
     console.log("printTree before deleteBlock: ");
-    tree.printTree();
-    tree.deleteBlock(2);
+    tr1.printTree();
+    tr1.deleteBlock(2);
     console.log("printTree after deleteBlock: ");
-    tree.printTree();
-    console.log(tree.findBlock(7));
-    console.log((_a = tree.findBlock(7)) === null || _a === void 0 ? void 0 : _a.getValue());
-    var tree2 = new Tree();
-    tree2.insertBlock("sdfsdf");
-    tree2.insertBlock("sgsasd");
-    tree2.insertBlock("sddddd");
-    console.log(tree2.findBlock("sddddd"));
+    tr1.printTree();
+
+    console.log(tr1.findBlock(7));
+    console.log(tr1.findBlock(7)?.getValue());
+
+    const tr2: Tree<string> = new Tree<string>();
+
+    tr2.insertBlock("sdfsdf");
+    tr2.insertBlock("sgsasd");
+    tr2.insertBlock("sddddd");
+
+    console.log(tr2.findBlock("sddddd"));
 }
-checkWork();
+
+checkWork();*/
