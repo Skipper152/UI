@@ -1,6 +1,28 @@
+import readlineSync from "readline-sync";
 import { Tree } from "./Tree.js";
-var tree1 = new Tree();
-var tree2 = new Tree();
+var tree = new Tree();
+console.log("1) Для добавления элемента в дерево введите \"insert value\", где value - значение для вставки");
+console.log("2) Для удаления элемента из дерева введите \"delete value\", где value - удаляемый элемент");
+console.log("3) Для поиска элемента в дереве введите \"find value\", где value - нужный элемент");
+console.log("4) Для вывода всего дерева введите \"print\"");
+console.log("5) Для завершения введите \"exit\"");
+readlineSync.promptCLLoop({
+    insert: function (value) {
+        tree.insertBlock(Number(value));
+    },
+    delete: function (value) {
+        tree.deleteBlock(Number(value));
+    },
+    find: function (value) {
+        console.log(tree.findBlock(Number(value)));
+    },
+    print: function () {
+        tree.printTree();
+    },
+    exit: function () {
+        return true;
+    }
+});
 /*
 function checkWork(): void {
     const tr1: Tree<number> = new Tree<number>();
@@ -30,4 +52,5 @@ function checkWork(): void {
     console.log(tr2.findBlock("sddddd"));
 }
 
-checkWork();*/
+checkWork();
+*/
