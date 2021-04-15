@@ -1,7 +1,7 @@
-export class BlockClass<T> {
+export class Block<T> {
     private _value: T | undefined; // хранящееся значение
-    private _left: BlockClass<T> | undefined; // ссылка на левую ветку (блок)
-    private _right: BlockClass<T> | undefined; // ссылка на правую ветку (блок)
+    private _left: Block<T> | undefined; // ссылка на левую ветку (блок)
+    private _right: Block<T> | undefined; // ссылка на правую ветку (блок)
     // Получение значения блока
     public getValue(): T | undefined {
         return this._value;
@@ -11,19 +11,19 @@ export class BlockClass<T> {
         this._value = value;
     }
     // Получение ссылки на левую ветку (блок)
-    public getLeft(): BlockClass<T> | undefined {
+    public getLeft(): Block<T> | undefined {
         return this._left;
     }
     // Установка ссылки на левую ветку (блок)
-    public setLeft(left: BlockClass<T> | undefined): void {
+    public setLeft(left: Block<T> | undefined): void {
         this._left = left;
     }
     // Получение ссылки на правую ветку (блок)
-    public getRight(): BlockClass<T> | undefined {
+    public getRight(): Block<T> | undefined {
         return this._right;
     }
     // Установка ссылки на правую ветку (блок)
-    public setRight(right: BlockClass<T> | undefined): void {
+    public setRight(right: Block<T> | undefined): void {
         this._right = right;
     }
 }

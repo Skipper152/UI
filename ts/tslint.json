@@ -143,9 +143,9 @@
     "no-restricted-globals": true,
     "function-constructor": true,
     "unnecessary-bind": true,
-    "file-name-casing": [
-      true,
-     "camel-case"],
+    //"file-name-casing": [
+    //  true,
+    // "camel-case"],
     "no-return-await": true,
     "no-duplicate-switch-case": true,
     "no-this-assignment": true,

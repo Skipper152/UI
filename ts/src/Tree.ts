@@ -1,7 +1,7 @@
-import { BlockClass } from "./blockClass.js";
+import { Block } from "./Block.js";
 
-export class TreeClass<T> {
-    private _rootBlock: BlockClass<T> | undefined; // узел дерева
+export class Tree<T> {
+    private _rootBlock: Block<T> | undefined; // узел дерева
     private _size: number; // количество элементов в дереве
 
     constructor() {
@@ -10,13 +10,13 @@ export class TreeClass<T> {
     }
     // 1. Добавление элементов
     public insertBlock(value: T): void {
-        const newBlock: BlockClass<T> = new BlockClass<T>(); // создание нового блока
+        const newBlock: Block<T> = new Block<T>(); // создание нового блока
         newBlock.setValue(value); // вставка значение
         if (this._rootBlock === undefined) { // если корневого узла не существует, то задается корневой узел
             this._rootBlock = newBlock;
         } else { // если корневой узел уже существует, то начинаем искать место, куда вставить новый элемент
-            let currentBlock: BlockClass<T> | undefined = this._rootBlock;
-            let rootBlock: BlockClass<T>;
+            let currentBlock: Block<T> | undefined = this._rootBlock;
+            let rootBlock: Block<T>;
             while (true) {
                 rootBlock = currentBlock;
                 if (value === currentBlock.getValue()) { // если добавляемый элемент уже есть в дереве, то не добавляем его
@@ -41,8 +41,8 @@ export class TreeClass<T> {
         }
     }
     // 2. Поиск элемента в дереве
-    public findBlock(value: T): BlockClass<T> | undefined {
-        let currentBlock: BlockClass<T> | undefined = this._rootBlock;
+    public findBlock(value: T): Block<T> | undefined {
+        let currentBlock: Block<T> | undefined = this._rootBlock;
         while (value !== currentBlock?.getValue()) {
             currentBlock = value < (<T>currentBlock?.getValue()) ? currentBlock?.getLeft() : currentBlock?.getRight();
             if (currentBlock === undefined) {
@@ -53,8 +53,8 @@ export class TreeClass<T> {
     }
     // 3. Удаление элемента
     public deleteBlock(value: T): boolean {
-        let currentBlock: BlockClass<T> | undefined = this._rootBlock;
-        let rootBlock: BlockClass<T> | undefined = this._rootBlock;
+        let currentBlock: Block<T> | undefined = this._rootBlock;
+        let rootBlock: Block<T> | undefined = this._rootBlock;
         let isLeft: boolean = true;
 
         while (value !== currentBlock?.getValue()) { // поиск необходимого блока
@@ -95,7 +95,7 @@ export class TreeClass<T> {
                 rootBlock?.setRight(currentBlock.getRight());
             }
         } else { // если есть и правая и левая ветки, то нужно выбрать подходящую замену для удаляемого узла
-            const replacement: BlockClass<T> | undefined = this.receiveReplacement(currentBlock); // поиск замены осуществляется с помощью метода receiveReplacement
+            const replacement: Block<T> | undefined = this.receiveReplacement(currentBlock); // поиск замены осуществляется с помощью метода receiveReplacement
             if (currentBlock === this._rootBlock) {
                 this._rootBlock = replacement;
             } else if (isLeft) {
@@ -107,10 +107,10 @@ export class TreeClass<T> {
         return true; // если удаление успешно, то возвращаем true
     }
     // Поиск замены для удаляемого элемента
-    private receiveReplacement(block: BlockClass<T>): BlockClass<T> | undefined {
-        let rootBlock: BlockClass<T> = block;
-        let replacementBlock: BlockClass<T> = block;
-        let currentBlock: BlockClass<T> | undefined = block.getRight(); // берем правую ветку и проходимся по ней
+    private receiveReplacement(block: Block<T>): Block<T> | undefined {
+        let rootBlock: Block<T> = block;
+        let replacementBlock: Block<T> = block;
+        let currentBlock: Block<T> | undefined = block.getRight(); // берем правую ветку и проходимся по ней
         while (currentBlock !== undefined) {
             rootBlock = replacementBlock;
             replacementBlock = currentBlock;
@@ -124,22 +124,22 @@ export class TreeClass<T> {
     }
     // 4. Вывод всего дерева
     public printTree(): void {
-        const values: Array<BlockClass<T> | undefined> = []; // общий стек значений дерева
+        const values: Array<Block<T> | undefined> = []; // общий стек значений дерева
         values.push(this._rootBlock);
         let gaps: number = 64; // начальное значение расстояния между элементами
         let isRowEmpty: boolean = false;
         // Отделяем дерево от остального вывода, чтобы было нагляднее
-        const line: string = "######################################################### Your TreeClass ##############################################################\n";
+        const line: string = "######################################################### Your Tree ##############################################################\n";
         console.log(line);
         while (!isRowEmpty) {
             let str1: string = "";
-            const local: Array<BlockClass<T> | undefined> = []; // локальный стек для задания потомков элемента
+            const local: Array<Block<T> | undefined> = []; // локальный стек для задания потомков элемента
             isRowEmpty = true;
             for (let i = 0; i < gaps; i++) {
                 str1 += " ";
             }
             while (values.length !== 0) { // цикл выоплняется,пока общий стек значений дерева не пустой
-                const temp: BlockClass<T> | undefined = values.pop(); // берем следующий, при этом удаляя его из стека
+                const temp: Block<T> | undefined = values.pop(); // берем следующий, при этом удаляя его из стека
                 if (temp !== undefined) {
                     str1 += temp.getValue();
                     local.push(temp.getLeft()); // сохраняем в локальный стек, наследники текущего элемента
