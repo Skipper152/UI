@@ -1,13 +1,13 @@
 {
   "name": "typescript",
   "version": "1.0.0",
-  "main": "Main.js",
+  "main": "mainClass.js",
   "type": "module",
   "scripts": {
     "build": "npm run tslint && rimraf ./build && tsc",
     "buildAndStart": "npm run build && npm run start",
-    "start": "node build/Main.js",
-    "tslint": "tslint -c tslint.json 'ts/src/**/*.ts'"
+    "start": "node build/mainClass.js",
+    "tslint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "devDependencies": {
     "@types/node": "14.14.22",
